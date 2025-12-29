@@ -1,16 +1,23 @@
-# facebook_clone
 
-A new Flutter project.
+## Facebook Clone App
 
-## Getting Started
+This is a simple **Facebook Clone app** made using **Flutter** and **Firebase**.
 
-This project is a starting point for a Flutter application.
+The app is connected to Firebase for user authentication.
+It has a **splash screen**, **login page**, **signup page**, and a **home page**.
 
-A few resources to get you started if this is your first Flutter project:
+Users can:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* Sign up using email and password
+* Log in using email and password
+* Continue with Google
+* Log out after logging in
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+When the app opens, a splash screen is shown.
+After login or signup, the user is taken to the home page.
+From the home page, the user can log out and return to the login screen.
+
+
+---
+
+
