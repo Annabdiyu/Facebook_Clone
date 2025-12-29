@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../services/auth_service.dart';
 import '../models/user_model.dart';
 import '../widgets/post_widget.dart';
 import '../widgets/story_widget.dart';
@@ -127,6 +129,15 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.message),
             onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await AuthService().signOut();
+              if (context.mounted) {
+                Navigator.of(context).pushNamedAndRemoveUntil('/login', (route) => false);
+              }
+            },
           ),
         ],
       ),

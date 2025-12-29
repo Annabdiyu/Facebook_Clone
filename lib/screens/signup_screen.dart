@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../services/auth_service.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -15,6 +16,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _nameController = TextEditingController();
   bool _isLoading = false;
 
+  final _authService = AuthService();
+
   Future<void> _signup() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
@@ -22,13 +25,11 @@ class _SignupScreenState extends State<SignupScreen> {
       });
 
       try {
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        await _authService.signUpWithEmail(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim(),
+          name: _nameController.text.trim(),
         );
-        
-        // You might want to update the display name here as well
-         await FirebaseAuth.instance.currentUser?.updateDisplayName(_nameController.text.trim());
 
         if (mounted) {
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);

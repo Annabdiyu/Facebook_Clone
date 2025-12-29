@@ -1,0 +1,24 @@
+{
+    "firestore": {
+        "rules": "firestore.rules"
+    },
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "facebook-f8dba",
+                    "appId": "1:967181029426:android:85537bfc54b4e44eed6c2b",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "facebook-f8dba",
+                    "configurations": {
+                        "android": "1:967181029426:android:85537bfc54b4e44eed6c2b"
+                    }
+                }
+            }
+        }
+    }
+}
